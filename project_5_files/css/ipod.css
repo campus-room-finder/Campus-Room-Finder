@@ -39,15 +39,13 @@ body {
 .albums-album-wrapper {
 	position: relative;
 	display: inline-block;
-	left: 35px;
-	top: 60px;
 	margin-bottom: 40px;
 	
 }
 
 .albums-album-art {
-	width: 220px;
-	height:200px;
+	width: 300px;
+	height:450px;
 	text-align: center;
 	
 }
@@ -70,4 +68,9 @@ body {
 	font-style: italic;
 	font-size: 11pt;
 	
+}
+.route_to_tech{
+	background-color: #6600cc;
+	color: #FFFFFF;
+	text-align: center;
 }
