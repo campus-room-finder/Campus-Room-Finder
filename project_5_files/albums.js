@@ -1,4 +1,3 @@
-
 var isInBuilding=true;
 var searchResult = "lr3";
 var isBathroom=false;
@@ -23,12 +22,20 @@ function buildAlbumList2() {
 }
 
 function needMap() {
-	 isInBuilding = true;
+    var need = document.getElementById("block2_1");
+ 	var not = document.getElementById("block2_2");
+ 	need.classList.add('color');
+ 	not.classList.remove('color');
+  	isInBuilding = true;
+}
+function needNoMap() {
+    var need = document.getElementById("block2_1");
+ 	var not = document.getElementById("block2_2");
+ 	not.classList.add('color');
+ 	need.classList.remove('color');
+  	isInBuilding = false;
 }
 
-function needNoMap() {
-	 isInBuilding = false;
-}
 function showSearchRoom() {
 	var bar =  document.getElementById("search");
 	bar.classList.remove('search-hide');

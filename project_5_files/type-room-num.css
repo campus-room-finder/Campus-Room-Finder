@@ -11,14 +11,11 @@ body {
 	margin: 105px 23px;
 }
 
-
-
 .submitbar {
+  position: relative;
   overflow: hidden;
-  background-color: #6600cc;
-  margin-top: 30px;
-  margin-bottom: -20px;
   float: top;
+  bottom: 40px;
 }
 
 .submitbar a {
