@@ -1,6 +1,7 @@
 /* 
 	Global classes 
 					*/
+
 body {
 	background-image: url("../images/iphoneOL.jpg");
 	background-repeat: no-repeat;
@@ -12,6 +13,7 @@ body {
 	height: 530px;
 	width: 300px;
 	margin: 105px 23px;
+	background-color: purple;
 }
 
 
@@ -36,38 +38,82 @@ body {
 	margin-left: 2px;
 }
 
-.albums-album-wrapper {
+
+.bathroom {
+	width: 300px;
+	background: url(tech-map-3.png);
+	height: 450px;
 	position: relative;
 	display: inline-block;
 	margin-bottom: 40px;
-	
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -500px -500px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
 }
+
+.lr3 {
+	width: 300px;
+	background: url(tech-map-2.png);
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -600px -600px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
+}
+
+
 
 .albums-album-art {
 	width: 300px;
 	height:450px;
 	text-align: center;
-	
 }
 
-.albums-album-name {
-	
-	font-family: sans-serif;
-    font-weight: bold;
-	font-size: 15pt;
-	text-align: center;
-	margin: 4px;
+
+.bathroom-map{
+	background: url(tech-map-3.png);
+	width: 300px;
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -400px -500px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
 }
 
-.albums-artist-name {
-
-
-	margin:5px;
-	font-family: sans-serif;
-    text-align: center;
-	font-style: italic;
-	font-size: 11pt;
-	
+.lr3-map{
+	background: url(tech-map-2.png);
+	width: 300px;
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -500px -500px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
 }
 .route_to_tech{
 	background-color: #6600cc;

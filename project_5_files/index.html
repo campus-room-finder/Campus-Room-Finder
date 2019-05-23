@@ -1,100 +1,192 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-        <title>Album Select</title>
-        <link rel="stylesheet" type="text/css" href="css/ipod.css"/>
-    </head>
-    <body>
+    <title>Album Select</title>
+    <link rel="stylesheet" type="text/css" href="css/ipod.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/carbon-components@latest/css/carbon-components.min.css">
+    <link rel="stylesheet" href="css/IBM2.css">
+    <link rel="stylesheet" type="text/css" href="type-room-num.css"/>
+    <script src="albums.js"></script>
+    <script src="https://unpkg.com/carbon-components@10.0.0/scripts/carbon-components.min.js">
+    </script>
+</head>
+<body>
     <div id="screen">
-	    <div class="head-bar">
-		    <button onclick="myFunction()" class="dropbtn">Click To Search Building</button>
-            <div id="myDropdown" class="dropdown-content" style="width:214px">
-                <a href="#mudd">Seeley G. Mudd Library</a>
-                <a href="#main">Northwestern University Library</a>
-                <a href="route_to_tech.html">Technological Institute </a>
-                <a href="#searle">Frances Searle Building</a>
-                <a href="#garage">The Garage</a>
-                <a href="#cook">Cook Hall</a>
-                <a href="#fisk">Fisk Hall</a>
-                <a href="#kresge">Kresge Hall</a>
-                <a href="#lunt">Lunt Hall</a>
-                <a href="#kellogg">Kellogg Global Hub</a>
-            </div>
+        <div id="logosect">
+            <img src="images/logo.jpg" style="width:80px;height:80px">
         </div>
-	    <iframe width="300" height="450" frameborder="0" style="border: 0"
-	            src="https://www.google.com/maps/embed/v1/search?q=northwestern+arch&key=AIzaSyCTzqtAauYBIWh5wgc81NidVsTR-Psk_uc" allowfullscreen></iframe>
+        <div class="bx--form-item">
+            <div id="dropit" class="bx--dropdown__wrapper ">
+                <ul data-dropdown data-value id="dropdown-id-longer-helper-text" class="bx--dropdown " tabindex="0">
+                  <li class="bx--dropdown-text">
+                  Tap to choose a building       </li>
+                  <li class="bx--dropdown__arrow-container">
+	                  <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;text-wrap: normal" xmlns="http://www.w3.org/2000/svg" class="bx--dropdown__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"></path></svg>
+                </li>
+                <li>
+                    <ul class="bx--dropdown-list">
+                      <li data-option data-value="all" class="bx--dropdown-item">
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Cook Hall</a>
+                    </li>
+                    <li data-option data-value="cloudFoundry" class="bx--dropdown-item">
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Fisk Hall</a>
+                    </li>
+                    <li data-option data-value="staging" class="bx--dropdown-item">
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Frances Searle</a>
+                    </li>
+                    <li data-option data-value="dea" class="bx--dropdown-item">
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">The Garage</a>
+                    </li>
+                    <li data-option data-value="router" class="bx--dropdown-item">
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Kellogg Global Hub</a>
+                    </li>
+                    <li data-option data-value="loremipsum" class="bx--dropdown-item">
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Kresge Hall</a>
+                    </li>
 
+                    <li data-option data-value="loremipsum" class="bx--dropdown-item">
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Lunt Hall</a>
+                    </li>
+
+                    <li data-option data-value="loremipsum" class="bx--dropdown-item">
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Main Library (University)</a>
+                    </li>
+
+                    <li data-option data-value="loremipsum" class="bx--dropdown-item">
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Mudd Library</a>
+                    </li>
+
+                    <li data-option data-value="loremipsum" class="bx--dropdown-item">
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Technological Institute (Tech)</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
-	</body>
+</div>
+	    <div>
+		    <button id="block2" class=" bx--btn--tertiary" type="button" style="width: 90px " onClick="needMap()">
+			    I am entering or in this building
+		    </button>
+		    <p id="block2" class="ORcomp"> OR </p>
+		    <button id="block2" class="bx--btn--tertiary" type="button" style="width: 90px" onClick="needNoMap()">
+			    I need walking directions to this building
+		    </button>
+	    </div>
+	    <div>
+		    <button id="block2" class=" bx--btn--tertiary" type="button" style="width: 90px" onClick="showSearchRoom()">
+			    Find a Room
+		    </button>
+		    <p id="block2" class="ORcomp"> OR </p>
+		    <button id="block2" class="bx--btn--tertiary" type="button" style="width: 90px" onClick="goToBathroom()" >
+			    Find a Bathroom	
+		    </button>
+	    </div>
+	    <div id="search" class="search-hide">
+			<div class="submitbar" >
+		    <div class="search-container">
+				    <input type="text" placeholder="Enter Room Number" name="search">
+				    <button type="submit" onClick="gotoL2()">Submit</button>
+				</div>
+		    </div>
+	    </div>
+	    <!--	    <iframe width="300" height="450" frameborder="0" style="border: 0"
+	                        src="https://www.google.com/maps/embed/v1/search?q=northwestern+arch&key=AIzaSyCTzqtAauYBIWh5wgc81NidVsTR-Psk_uc" allowfullscreen></iframe>
+	    -->
+    </div>
+    </body>
 
-<style>
-.dropbtn {
-    position: relative;
-    top: 14px;
-    background-color: lavender;
-    color: grey;
-    padding: 10px;
-    font-size: 18px;
-    border: 2px;
-    cursor: pointer;
-}
+    <style>
 
-.dropbtn:hover, .dropbtn:focus {
-  background-color: lightblue;
-}
+    img {
+        position: relative;
+        top: 10px;
+        left: 110px;
+    }
 
-.dropdown {
-  float: left;
-  position: relative;
-  display: inline-block;
-}
+    #dropit {
+        position: relative;
+        top: 40px;
+        left: 45px;
+    }
 
-.dropdown-content {
-  display: none;
-  position: relative;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  left: 43px;
-  top: 10px;
-  z-index: 1;
-}
+    #block2 { 
+        position: relative;
+        top: 80px;
+        margin: .5rem; 
+	    display: inline-block;
+        left: 20px;
+        color: white;
+        font-size: 1px;
+    }
 
-.dropdown-content a {
-  color: black;
-  padding: 16px 12px;
-  text-decoration: none;
-  display: block;
-  font-size: 12px;
-}
+    .ORcomp {
+        text-align: center;   
+        color: blue;
+    }
 
-.dropdown a:hover {background-color: #ddd;}
+    .dropbtn {
+        position: relative;
+        top: 20px;
+        background-color: lavender;
+        color: grey;
+        padding: 10px;
+        font-size: 18px;
+        border: 2px;
+        cursor: pointer;
+    }
 
-.show {display: block;}
+    .dropbtn:hover, .dropbtn:focus {
+      background-color: lightblue;
+  }
+
+  .dropdown {
+      float: left;
+      position: relative;
+      display: inline-block;
+  }
+
+  .dropdown-content {
+      display: none;
+      position: relative;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      left: 43px;
+      top: 10px;
+      z-index: 1;
+  }
+
+  .dropdown-content a {
+      color: black;
+      padding: 16px 12px;
+      text-decoration: none;
+      display: block;
+      font-size: 12px;
+  }
+
+  .dropdown a:hover {background-color: #ddd;}
+
+  .show {display: block;}
+
+  .search-hide {
+	  visibility: hidden;
+	  background-color: purple;
+
+  }
+
+	.search-show{
+		visibility: visible;
+		background-color: purple;
+		position: relative;
+		top: 100px;
+	}
 </style>
 
 <script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
 </script>
 
 </body>

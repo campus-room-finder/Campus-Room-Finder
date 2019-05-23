@@ -1,30 +1,51 @@
-// CS 330 - Homework 3 starter code
 
-// This is the JSON (JavaScript Object Notation) object that stores all of our 
-// album information. 
-var albums = [
- 
-  {
-    title : "Detailed Mapping",
-    artist : "Second Floor",
-    cover : "images/tech-map-second-floor-large.png",
-  },
-  
-  
-];
+var isInBuilding=true;
+var searchResult = "lr3";
+var isBathroom=false;
 
 
-// Fill in this function to dyamically construct the HTML elements for the album list
-function buildAlbumList() {
-  var albumList = document.getElementById("album-list");
-  if (albumList != null) {
-for (var i=0; i<albums.length; i++){
-var albumDiv = document.createElement('div');
-albumDiv.classList.add('albums-album-wrapper');
-var multline = 
-`<image class="albums-album-art" src="${albums[i].cover}">`;
-albumDiv.innerHTML = multline;
-albumList.appendChild(albumDiv);
+function buildAlbumList1() {
+	var albumList = document.getElementById("album-list");
+	if (albumList != null) {
+			var albumDiv = document.createElement('div');
+			albumDiv.classList.add('bathroom');
+			albumList.appendChild(albumDiv);
+	}
 }
+
+function buildAlbumList2() {
+	var albumList = document.getElementById("album-list");
+	if (albumList != null) {
+		var albumDiv = document.createElement('div');
+		albumDiv.classList.add('lr3');
+		albumList.appendChild(albumDiv);
+	}
 }
+
+function needMap() {
+	 isInBuilding = true;
+}
+
+function needNoMap() {
+	 isInBuilding = false;
+}
+function showSearchRoom() {
+	var bar =  document.getElementById("search");
+	bar.classList.remove('search-hide');
+	bar.classList.add('search-show');
+}
+
+function goToBathroom() {
+	if (isInBuilding)
+		location.href = "tech_map_bathroom.html";
+	else
+		location.href = "route_to_tech_to_bathroom.html";
+}
+
+function gotoL2()
+{
+	if (isInBuilding)
+		location.href = "tech_map_lr3.html";
+	else
+		location.href = "route_to_tech_to_lr3.html";
 }
