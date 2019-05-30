@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Index</title>
+	    <link rel="stylesheet" type="text/css" href="route_to_tech.css"/>
+	    <script src="albums.js"></script>
+    </head>
+<body>
+
+<div id="screen">
+	<iframe width="300" height="450" frameborder="0" style="border:0"
+	        src="https://www.google.com/maps/embed/v1/directions?origin=northwestern+arch&destination=place_id:ChIJXy3jHJ_aD4gRZqtslbuU0S4&key=AIzaSyCTzqtAauYBIWh5wgc81NidVsTR-Psk_uc&mode=walking&waypoints=sheridan" allowfullscreen></iframe> 
+	<div class="route_to_tech">
+		<a href="index.html">
+			<button style="width:100px;height:40px;">Search</button></a>
+	</div>
+</div>
+</body>
+<script>
+	buildAlbumList2();  // defined in albums.js
+
+	var container = document.querySelector("#album-list");
+	var mover = document.querySelector(".lr3");
+	var movable = false;
+	var X = -720;
+	var Y = -650;
+	var startX = 0;
+	var startY = 0;
+	var size = 2000;
+
+	function zoomIn() {
+		var map = document.querySelector(".albums-album-wrapper");
+		size = size * 1.2;
+		mover.style.backgroundSize = size + "px";
+		Y = Y * 0.2 + Y;
+		X = X * 0.2 + X;
+		mover.style.backgroundPositionX = X  + "px";
+		mover.style.backgroundPositionY = Y + "px";
+	}
+
+	function zoomOut() {
+		var map = document.querySelector(".albums-album-wrapper");
+		size = size / 1.2;
+
+		mover.style.backgroundSize = size + "px";
+		Y = Y - Y / 1.2;
+		X = Y - X / 1.2;
+		mover.style.backgroundPositionX = X  + "px";
+		mover.style.backgroundPositionY = Y + "px";
+	}
+
+	container.addEventListener("mousedown", function(e) {
+		startX = e.offsetX;
+		startY = e.offsetY;
+		movable = true;
+	});
+
+	container.addEventListener("mouseup", function() {
+		movable = false;
+	});
+
+	container.addEventListener("mousemove", function(e) {
+		if (movable === true) {
+			X = X + (e.offsetX - startX) * 1.5;
+			Y = Y + (e.offsetY - startY) * 1.5;
+			//	   	if( X > -1000 && X < 0)
+			mover.style.backgroundPositionX = X  + "px";
+			//	   	if( Y > 1000)
+			mover.style.backgroundPositionY = Y + "px";
+			startX = e.offsetX;
+			startY = e.offsetY;
+		}
+	});
+
+
+	container.addEventListener("mouseout", function() {
+		movable = false;
+	});
+</script>
+</html>
+<!-- 
+* bg iphone img is 363x762px
+* iphone 'screen' is apprx 300x530 -->

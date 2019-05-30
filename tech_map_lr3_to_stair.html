@@ -1,0 +1,91 @@
+<html>
+<header>
+   <title>Album Select</title>
+   <link rel="stylesheet" type="text/css" href="css/ipod.css"/>
+   <script src="albums.js"></script>
+</header>
+
+<body>
+   <div id="screen">
+    <!-- <div class="head-bar">
+         <h1>Technological Institute</h1>
+      </div>   -->
+
+      <!-- This DIV is the parent for all of the albums in the list -->
+    <div id="album-list">
+    </div>
+    <div class="route_to_tech">
+	    <a href="index.html">
+		    <button style="width:100px;height:40px;">Back</button></a>
+	    <a href="tech_map_stair_to_F280.html">
+		    <button style="width:100px;height:40px;">Next</button></a>
+    </div>
+   </div>
+</body>
+
+<!-- Note: We put this at the end of the page so that the rest of the HTML loads first -->
+<script>
+	buildAlbumList3();  // defined in albums.js
+
+   var container = document.querySelector("#album-list");
+   var mover = document.querySelector(".lobby_stair");
+   var movable = false;
+   var X = -600;
+   var Y = -600;
+   var startX = 0;
+   var startY = 0;
+   var size = 2000;
+
+   function zoomIn() {
+	   var map = document.querySelector(".albums-album-wrapper");
+	   size = size * 1.2;
+	   mover.style.backgroundSize = size + "px";
+	   Y = Y * 0.2 + Y;
+	   X = X * 0.2 + X;
+	   mover.style.backgroundPositionX = X  + "px";
+	   mover.style.backgroundPositionY = Y + "px";
+   }
+
+   function zoomOut() {
+	   var map = document.querySelector(".albums-album-wrapper");
+	   size = size / 1.2;
+
+	   mover.style.backgroundSize = size + "px";
+	   Y = Y - Y / 1.2;
+	   X = Y - X / 1.2;
+	   mover.style.backgroundPositionX = X  + "px";
+	   mover.style.backgroundPositionY = Y + "px";
+   }
+
+   container.addEventListener("mousedown", function(e) {
+	   startX = e.offsetX;
+	   startY = e.offsetY;
+	   movable = true;
+   });
+
+   container.addEventListener("mouseup", function() {
+	   movable = false;
+   });
+
+   container.addEventListener("mousemove", function(e) {
+	   if (movable === true) {
+		   X = X + (e.offsetX - startX) * 1.5;
+		   Y = Y + (e.offsetY - startY) * 1.5;
+	//	   	if( X > -1000 && X < 0)
+		   mover.style.backgroundPositionX = X  + "px";
+	//	   	if( Y > 1000)
+		   mover.style.backgroundPositionY = Y + "px";
+		   startX = e.offsetX;
+		   startY = e.offsetY;
+	   }
+   });
+
+
+   container.addEventListener("mouseout", function() {
+	   movable = false;
+   });
+</script>
+</html>
+<!-- 
+* bg iphone img is 363x762px
+* iphone 'screen' is apprx 300x530 -->

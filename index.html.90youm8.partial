@@ -18,47 +18,46 @@
         </div>
         <div class="bx--form-item">
             <div id="dropit" class="bx--dropdown__wrapper ">
-              <div class="bx--form__helper-text bx--form__helper-text--disabled" style="visibility: hidden;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
                 <ul data-dropdown data-value id="dropdown-id-longer-helper-text" class="bx--dropdown " tabindex="0">
                   <li class="bx--dropdown-text">
-                  Choose a building...       </li>
+                  Tap to choose a building       </li>
                   <li class="bx--dropdown__arrow-container">
 	                  <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;text-wrap: normal" xmlns="http://www.w3.org/2000/svg" class="bx--dropdown__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"></path></svg>
                 </li>
                 <li>
                     <ul class="bx--dropdown-list">
                       <li data-option data-value="all" class="bx--dropdown-item">
-                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1" onClick="buildingNotImplementYet()">Cook Hall</a>
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Cook Hall</a>
                     </li>
                     <li data-option data-value="cloudFoundry" class="bx--dropdown-item">
-                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1" onClick="buildingNotImplementYet()">Fisk Hall</a>
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Fisk Hall</a>
                     </li>
                     <li data-option data-value="staging" class="bx--dropdown-item">
-                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1" onClick="buildingNotImplementYet()">Frances Searle</a>
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Frances Searle</a>
                     </li>
                     <li data-option data-value="dea" class="bx--dropdown-item">
-                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1" onClick="buildingNotImplementYet()">The Garage</a>
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">The Garage</a>
                     </li>
                     <li data-option data-value="router" class="bx--dropdown-item">
-                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1" onClick="buildingNotImplementYet()">Kellogg Global Hub</a>
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Kellogg Global Hub</a>
                     </li>
                     <li data-option data-value="loremipsum" class="bx--dropdown-item">
-                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1" onClick="buildingNotImplementYet()">Kresge Hall</a>
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Kresge Hall</a>
                     </li>
 
                     <li data-option data-value="loremipsum" class="bx--dropdown-item">
-                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1" onClick="buildingNotImplementYet()">Lunt Hall</a>
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Lunt Hall</a>
                     </li>
 
                     <li data-option data-value="loremipsum" class="bx--dropdown-item">
-                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1" onClick="buildingNotImplementYet()">Main Library (University)</a>
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Main Library (University)</a>
                     </li>
 
                     <li data-option data-value="loremipsum" class="bx--dropdown-item">
-                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1" onClick="buildingNotImplementYet()">Mudd Library</a>
+                        <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Mudd Library</a>
                     </li>
 
-                    <li data-option data-value="loremipsum" class="bx--dropdown-item" onClick="clickedTech()">
+                    <li data-option data-value="loremipsum" class="bx--dropdown-item">
                         <a class="bx--dropdown-link" href="javascript:void(0)" tabindex="-1">Technological Institute (Tech)</a>
                     </li>
                 </ul>
@@ -66,34 +65,32 @@
         </ul>
     </div>
 </div>
-	    <div id="buildORbath" class="search-hide">
-		    <button id="block2_1" class="bx--btn--tertiary" type="button" style="width:90px;background-color:lavender;" onClick="showSearchRoom()">
-			    <p> Find a Room </p>
+	    <div>
+		    <button id="block2_1" class="bx--btn--tertiary" type="button" style="width:90px;" onClick="needMap()">
+			    I am entering or in this building
 		    </button>
 		    <p id="block2" class="ORcomp"> OR </p>
-		    <button id="block2_2" class="bx--btn--tertiary" type="button" style="width:90px;background-color:lavender;" onClick="BathroomOp()" >
+		    <button id="block2_2" class="bx--btn--tertiary" type="button" style="width:90px;" onClick="needNoMap()">
+			    I need walking directions to this building
+		    </button>
+	    </div>
+	    <div>
+		    <button id="block2" class="bx--btn--tertiary" type="button" style="width:90px;" onClick="showSearchRoom()">
+			    Find a Room
+		    </button>
+		    <p id="block2" class="ORcomp"> OR </p>
+		    <button id="block2" class="bx--btn--tertiary" type="button" style="width:90px;" onClick="goToBathroom()" >
 			    Find a Bathroom	
 		    </button>
 	    </div>
-	    <div id="search" class="search-hide" style="position:relative;top:100px;">
+	    <div id="search" class="search-hide">
 			<div class="submitbar" >
 		    <div class="search-container">
-				    <input type="text" placeholder="Enter Room Number" name="search" id="searchResult">
+				    <input type="text" placeholder="Enter Room Number" name="search">
 				    <button id="subbutt" type="submit" onClick="gotoL2()">Submit</button>
 				</div>
 		    </div>
 	    </div>
-      <div id="mfchoice" class="search-hide" style="position:relative;left:68px;">
-        <button id="block2_1" class="bx--btn--tertiary" type="button" style="width:110px;top:-35px;background-color:lavender;" onClick="goToBathroom()">
-          <p> Male </p>
-        </button>
-        <p style="width:2px"> </p>
-        <button id="block2_2" class="bx--btn--tertiary" type="button" style="width:110px;top:-35px;background-color:lavender;">
-          <p> Female </p>
-        </button>
-      </div>
-      </div>
-
 	    <!--	    <iframe width="300" height="450" frameborder="0" style="border: 0"
 	                        src="https://www.google.com/maps/embed/v1/search?q=northwestern+arch&key=AIzaSyCTzqtAauYBIWh5wgc81NidVsTR-Psk_uc" allowfullscreen></iframe>
 	    -->
@@ -106,11 +103,6 @@
       text-align: center;
       position: relative;
       left: -10px;
-    }
-
-    #buildORbath {
-      position: relative;
-      top: -15px;
     }
 
     #subbutt {
@@ -126,8 +118,7 @@
 
     #dropit {
         position: relative;
-        left: 27px;
-        top: -25px;
+        left: 45px;
     }
 
     #block2 { 
@@ -137,7 +128,7 @@
 	      display: inline-block;
         left: 20px;
         color: white;
-        font-size: 15px;
+        font-size: 12px;
     }
 
     #block2_1 { 
@@ -146,8 +137,8 @@
         margin: .5rem; 
         display: inline-block;
         left: 20px;
-        color: black;
-        font-size: 15px;
+        color: white;
+        font-size: 12px;
     }
 
     #block2_2 { 
@@ -156,17 +147,8 @@
         margin: .5rem; 
         display: inline-block;
         left: 20px;
-        color: black;
-        font-size: 15px;
-    }
-
-    #block3 {
-        position: relative;
-        top: -180px;
-        left: 105px;
-        margin: .5rem; 
         color: white;
-        font-size: 20px;
+        font-size: 12px;
     }
 
     .ORcomp {
@@ -225,6 +207,8 @@
 
 	.search-show{
 		visibility: visible;
+		position: relative;
+		top: 100px;
 	}
 
   .color {
