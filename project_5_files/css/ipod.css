@@ -20,11 +20,11 @@ body {
 .head-bar {
 	height: 70px;
 	text-align: center;
-    font-family: sans-serif;
+    	font-family: sans-serif;
 	font-size: 10px;
-    color: black;
+    	color: black;
 	text-shadow: 0.05em 0.05em 0.1em black;
-    background-color: purple;
+   	background-color: purple;
 }
 
 .back-bottom {
@@ -40,23 +40,26 @@ body {
 
 
 .bathroom {
+	cursor: move;
 	width: 300px;
 	background: url(tech-map-3.png);
 	height: 450px;
 	position: relative;
 	display: inline-block;
 	margin-bottom: 40px;
-	background-size: 1500px;
+	background-size: 1000px;
   	background-repeat: no-repeat;
-  	background-position: -500px -500px;
+  	background-position: -400px -300px;
   	transform: scale(1);
   	transition: background-position 0.25s;
   	&.no-more-slidey {
     	transition: none;
   	}
+	
 }
 
 .lr3 {
+	cursor: move;
 	width: 300px;
 	background: url(tech-map-2.png);
 	height: 450px;
@@ -65,15 +68,71 @@ body {
 	margin-bottom: 40px;
 	background-size: 1500px;
   	background-repeat: no-repeat;
-  	background-position: -600px -600px;
+  	background-position: -720px -650px;
   	transform: scale(1);
   	transition: background-position 0.25s;
   	&.no-more-slidey {
     	transition: none;
   	}
+	
 }
 
+.lobby_stair {
+	cursor: move;
+	width: 300px;
+	background: url(tech-map-5.png);
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -720px -650px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
+	
+}
 
+.stair_F280 {
+	cursor: move;
+	width: 300px;
+	background: url(tech-map-4.png);
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -720px -650px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
+	
+}
+
+.lobby {
+	cursor: move;
+	width: 300px;
+	background: url(tech-map-first.png);
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -720px -650px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
+	
+}
 
 .albums-album-art {
 	width: 300px;
@@ -82,39 +141,6 @@ body {
 }
 
 
-.bathroom-map{
-	background: url(tech-map-3.png);
-	width: 300px;
-	height: 450px;
-	position: relative;
-	display: inline-block;
-	margin-bottom: 40px;
-	background-size: 1500px;
-  	background-repeat: no-repeat;
-  	background-position: -400px -500px;
-  	transform: scale(1);
-  	transition: background-position 0.25s;
-  	&.no-more-slidey {
-    	transition: none;
-  	}
-}
-
-.lr3-map{
-	background: url(tech-map-2.png);
-	width: 300px;
-	height: 450px;
-	position: relative;
-	display: inline-block;
-	margin-bottom: 40px;
-	background-size: 1500px;
-  	background-repeat: no-repeat;
-  	background-position: -500px -500px;
-  	transform: scale(1);
-  	transition: background-position 0.25s;
-  	&.no-more-slidey {
-    	transition: none;
-  	}
-}
 .route_to_tech{
 	background-color: #6600cc;
 	color: #FFFFFF;

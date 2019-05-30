@@ -15,21 +15,23 @@
     <div id="album-list">
     </div>
     <div class="route_to_tech">
-		<a href="first_index_lobby.html">
-	    <button style="width:100px;height:40px;">Finish</button></a>
+	    <a href="index.html">
+		    <button style="width:100px;height:40px;">Back</button></a>
+	    <a href="tech_map_stair_to_F280.html">
+		    <button style="width:100px;height:40px;">Next</button></a>
     </div>
    </div>
 </body>
 
 <!-- Note: We put this at the end of the page so that the rest of the HTML loads first -->
 <script>
-	buildAlbumList2();  // defined in albums.js
+	buildAlbumList3();  // defined in albums.js
 
    var container = document.querySelector("#album-list");
-   var mover = document.querySelector(".lr3");
+   var mover = document.querySelector(".lobby_stair");
    var movable = false;
-   var X = -720;
-   var Y = -650;
+   var X = -600;
+   var Y = -600;
    var startX = 0;
    var startY = 0;
    var size = 2000;

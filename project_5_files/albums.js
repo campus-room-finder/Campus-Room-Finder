@@ -1,7 +1,5 @@
 var isInBuilding=true;
-var searchResult = "lr3";
 var isBathroom=false;
-
 
 function buildAlbumList1() {
 	var albumList = document.getElementById("album-list");
@@ -20,6 +18,34 @@ function buildAlbumList2() {
 		albumList.appendChild(albumDiv);
 	}
 }
+
+function buildAlbumList3() {
+	var albumList = document.getElementById("album-list");
+	if (albumList != null) {
+		var albumDiv = document.createElement('div');
+		albumDiv.classList.add('lobby_stair');
+		albumList.appendChild(albumDiv);
+	}
+}
+
+function buildAlbumList4() {
+	var albumList = document.getElementById("album-list");
+	if (albumList != null) {
+		var albumDiv = document.createElement('div');
+		albumDiv.classList.add('stair_F280');
+		albumList.appendChild(albumDiv);
+	}
+}
+
+function buildAlbumList5() {
+	var albumList = document.getElementById("album-list");
+	if (albumList != null) {
+		var albumDiv = document.createElement('div');
+		albumDiv.classList.add('lobby');
+		albumList.appendChild(albumDiv);
+	}
+}
+
 
 function needMap() {
     var need = document.getElementById("block2_1");
@@ -49,10 +75,19 @@ function goToBathroom() {
 		location.href = "route_to_tech_to_bathroom.html";
 }
 
-function gotoL2()
-{
-	if (isInBuilding)
-		location.href = "tech_map_lr3.html";
-	else
-		location.href = "route_to_tech_to_lr3.html";
+function gotoL2() {
+	var searchResult = document.getElementById("searchResult").value.toLowerCase();
+	if (searchResult === "lr3") {
+		if (isInBuilding)
+			location.href = "tech_map_lr3.html";
+		else
+			location.href = "route_to_tech_to_lr3.html";
+	}
+	else if (searchResult === "f280")
+		location.href = "tech_map_lr3_to_stair.html";
 }
+
+function notImplementYet() {
+	alert("Data not currently available");
+}
+

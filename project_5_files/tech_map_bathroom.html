@@ -15,54 +15,56 @@
     <div id="album-list">
     </div>
     <div class="route_to_tech">
-		<a href="index.html">
+		<a href="first_index_lobby.html">
 	      <button style="width:100px;height:40px;">Finish</button></a>
-		</a>
     </div>
    </div>
 </body>
 
 <!-- Note: We put this at the end of the page so that the rest of the HTML loads first -->
 <script>
-	buildAlbumList1(); // defined in albums.js
-	
-   var container = document.querySelector("#album-list");
-   var mover = document.querySelector(".bathroom");
-   var movable = false;
-   var X = -500;
-   var Y = -500;
-   var startX = 0;
-   var startY = 0;
-   var size = 2000;
+	buildAlbumList1('bathroom'); // defined in albums.js
+	var container = document.querySelector("#album-list");
+	var mover = document.querySelector(".bathroom");
+	var movable = false;
+	var X = -400;
+	var Y = -300;
+	var startX = 0;
+	var startY = 0;
+	var size = 2000;
+
+	container.addEventListener("mousedown",
+		function(e) {
+			startX = e.offsetX;
+			startY = e.offsetY;
+			movable = true;
+		});
+
+	container.addEventListener("mouseup",
+		function() {
+			movable = false;
+		});
+
+	container.addEventListener("mousemove",
+		function(e) {
+			if (movable === true) {
+				X = X + (e.offsetX - startX) * 1.5;
+				Y = Y + (e.offsetY - startY) * 1.5;
+				//	if( X < 100 )
+				mover.style.backgroundPositionX = X + "px";
+				//	if( Y < 100)
+				mover.style.backgroundPositionY = Y + "px";
+				startX = e.offsetX;
+				startY = e.offsetY;
+			}
+		});
 
 
-   container.addEventListener("mousedown", function(e) {
-	   startX = e.offsetX;
-	   startY = e.offsetY;
-	   movable = true;
-   });
-
-   container.addEventListener("mouseup", function() {
-	   movable = false;
-   });
-
-   container.addEventListener("mousemove", function(e) {
-	   if (movable === true) {
-		   X = X + (e.offsetX - startX) * 1.5;
-		   Y = Y + (e.offsetY - startY) * 1.5;
-		   //	if( X < 100 )
-		   mover.style.backgroundPositionX = X  + "px";
-		   //	if( Y < 100)
-		   mover.style.backgroundPositionY = Y + "px";
-		   startX = e.offsetX;
-		   startY = e.offsetY;
-	   }
-   });
-
-
-   container.addEventListener("mouseout", function() {
-	   movable = false;
-   });
+	container.addEventListener("mouseout",
+		function() {
+			movable = false;
+		});
+   
 </script>
 </html>
 <!-- 
