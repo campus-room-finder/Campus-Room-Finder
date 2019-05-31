@@ -1,0 +1,166 @@
+/* 
+	Global classes 
+					*/
+
+body {
+	background-image: url("../images/iphoneOL.jpg");
+	background-repeat: no-repeat;
+	font-family: Avenir, sans-serif;
+}
+
+
+#screen {
+	height: 530px;
+	width: 300px;
+	margin: 105px 23px;
+	background-color: purple;
+}
+
+
+.head-bar {
+	height: 70px;
+	text-align: center;
+    	font-family: sans-serif;
+	font-size: 10px;
+    	color: black;
+	text-shadow: 0.05em 0.05em 0.1em black;
+   	background-color: purple;
+}
+
+.back-bottom {
+	border-style: solid double;
+	float: left;
+	background-color: darkgray;
+	height: 70px;
+	width: 60px;
+	padding: 3px;
+	margin-top: 5px;
+	margin-left: 2px;
+}
+
+
+.bathroom {
+	cursor: move;
+	width: 300px;
+	background: url(tech-map-3.png);
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1000px;
+  	background-repeat: no-repeat;
+  	background-position: -400px -300px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
+	
+}
+
+.lr3 {
+	cursor: move;
+	width: 300px;
+	background: url(tech-map-2.png);
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -720px -650px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
+	
+}
+
+.lobby_stair {
+	cursor: move;
+	width: 300px;
+	background: url(tech-map-5.png);
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -720px -650px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
+	
+}
+
+.stair_F280 {
+	cursor: move;
+	width: 300px;
+	background: url(tech-map-4.png);
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -720px -650px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
+	
+}
+
+.lobby {
+	cursor: move;
+	width: 300px;
+	background: url(tech-map-first.png);
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -720px -650px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
+	
+}
+
+.lobby-lr3 {
+	cursor: move;
+	width: 300px;
+	background: url(tech-map-first-lr3.png);
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -720px -650px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
+	
+}
+.albums-album-art {
+	width: 300px;
+	height:450px;
+	text-align: center;
+}
+
+
+.route_to_tech{
+	background-color: #6600cc;
+	color: #FFFFFF;
+	text-align: center;
+}
