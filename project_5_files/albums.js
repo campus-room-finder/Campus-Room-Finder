@@ -77,6 +77,9 @@ function showSearchRoom() {
 	var bar =  document.getElementById("search");
 	bar.classList.remove('search-hide');
 	bar.classList.add('search-show');
+	var choice = document.getElementById("mfchoice");
+	choice.classList.remove('search-show');
+	choice.classList.add('search-hide');
 }
 
 function goToBathroom() {
@@ -120,7 +123,9 @@ function BathroomOp() {
 	var mf =  document.getElementById("mfchoice");
 	mf.classList.remove('search-hide');
 	mf.classList.add('search-show');
-
+	var bar =  document.getElementById("search");
+	bar.classList.remove('search-show');
+	bar.classList.add('search-hide');
 	//if (isInBuilding)
 	//	location.href = "tech_map_bathroom.html";
 	//else

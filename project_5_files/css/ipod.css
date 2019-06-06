@@ -14,6 +14,8 @@ body {
 	width: 300px;
 	margin: 105px 23px;
 	background-color: purple;
+	position: relative; 
+	left: 8px;
 }
 
 
@@ -160,7 +162,7 @@ body {
 
 
 .route_to_tech{
-	background-color: #6600cc;
+	background-color: purple;
 	color: #FFFFFF;
 	text-align: center;
 }
