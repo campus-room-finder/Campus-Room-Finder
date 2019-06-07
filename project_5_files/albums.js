@@ -1,6 +1,6 @@
 var isGoodBuilding=false;
 var isBathroom=false;
-
+var needStairway = true;
 var phase = 1; 
 
 function buildAlbumList1() {
@@ -57,6 +57,22 @@ function buildAlbumList6() {
 	}
 }
 
+function buildAlbumList7() {
+	var albumList = document.getElementById("album-list");
+	if (albumList != null) {
+		var albumDiv = document.createElement('div');
+		albumDiv.classList.add('lr3-elevatar');
+		albumList.appendChild(albumDiv);
+	}
+}
+function buildAlbumList8() {
+	var albumList = document.getElementById("album-list");
+	if (albumList != null) {
+		var albumDiv = document.createElement('div');
+		albumDiv.classList.add('elevatar-f280');
+		albumList.appendChild(albumDiv);
+	}
+}
 
 function needMap() {
     var need = document.getElementById("block2_1");
@@ -88,6 +104,13 @@ function goToBathroom() {
 	else
 		buildingNotImplementYet();
 }
+function needStair() {
+
+	if (needStairway)
+		needStairway = false;
+	else
+		needStairway = true;
+}
 
 function gotoL2() {
 	var searchResult = document.getElementById("searchResult").value.toLowerCase();
@@ -97,8 +120,10 @@ function gotoL2() {
 		if (searchResult === "lr3") {
 			location.href = "route_to_tech_to_lr3.html";
 
-		} else if (searchResult === "f280") {
+		} else if (searchResult === "f280" && needStairway === true) {
 			location.href = "tech_map_lr3_to_stair.html";
+		} else if (searchResult === "f280" && needStairway === false) {
+			location.href = "tech_map_lr3_to_elevatar.html";
 		} else
 			roomNotImplementYet();
 	}
