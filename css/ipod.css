@@ -108,7 +108,7 @@ body {
 	margin-bottom: 40px;
 	background-size: 1500px;
   	background-repeat: no-repeat;
-  	background-position: -720px -650px;
+  	background-position: -840px -680px;
   	transform: scale(1);
   	transition: background-position 0.25s;
   	&.no-more-slidey {
@@ -183,7 +183,7 @@ body {
 	margin-bottom: 40px;
 	background-size: 1500px;
   	background-repeat: no-repeat;
-  	background-position: -720px -650px;
+  	background-position: -900px -700px;
   	transform: scale(1);
   	transition: background-position 0.25s;
   	&.no-more-slidey {
