@@ -154,6 +154,42 @@ body {
   	}
 	
 }
+
+.lr3-elevatar{
+	cursor: move;
+	width: 300px;
+	background: url(tech-map-6.png);
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -720px -650px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
+}
+
+.elevatar-f280{
+	cursor: move;
+	width: 300px;
+	background: url(tech-map-7.png);
+	height: 450px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 40px;
+	background-size: 1500px;
+  	background-repeat: no-repeat;
+  	background-position: -720px -650px;
+  	transform: scale(1);
+  	transition: background-position 0.25s;
+  	&.no-more-slidey {
+    	transition: none;
+  	}
+}
 .albums-album-art {
 	width: 300px;
 	height:450px;
